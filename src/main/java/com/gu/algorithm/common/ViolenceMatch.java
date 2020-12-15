@@ -10,6 +10,10 @@ package com.gu.algorithm.common;
 public class ViolenceMatch {
 
 
+    //获取到一个字符串(子串) 的部分匹配值表
+//    public static int[] kmpNext(String dest) {
+//
+//    }
     //暴力匹配算法的实现
     public static int violenceMatch(String str1, String str2) {
         char[] s1 = str1.toCharArray();
