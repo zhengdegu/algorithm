@@ -1,6 +1,7 @@
 package com.gu.algorithm.string;
 
 import java.util.Arrays;
+import java.util.HashSet;
 
 /**
  * 最⻓公共前缀
@@ -18,8 +19,44 @@ public class ReplaceSpace {
         // String[] strs = { "customer", "car", null };//空 // String[] strs = {};//空串
         // String[] strs = null;//空串
         System.out.println(replaceSpace(strs));// c
+        int abccccdd = longestPalindrome("abccccdd");
+        System.out.println(abccccdd);// c
     }
 
+    /**
+     * 输⼊:
+     * "abccccdd"
+     * 输出:
+     * 7
+     * 最长回文字符串
+     *
+     * @param data
+     * @return
+     */
+    public static int longestPalindrome(String data) {
+        if (data == null) {
+            return 0;
+        }
+        int count = 0;
+        HashSet<Character> characters = new HashSet<>();
+        char[] chars = data.toCharArray();
+        for (char aChar : chars) {
+            if (!characters.contains(aChar)) {
+                characters.add(aChar);
+            } else {
+                characters.remove(aChar);
+                count++;
+            }
+        }
+        return characters.isEmpty() ? count * 2 : count * 2 + 1;
+    }
+
+    /**
+     * 最长公共前缀
+     *
+     * @param data
+     * @return
+     */
     public static String replaceSpace(String[] data) {
         //对字符串进行null判断
 
