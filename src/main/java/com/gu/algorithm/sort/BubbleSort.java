@@ -14,14 +14,57 @@ import java.util.stream.Stream;
 public class BubbleSort {
 
     public static void main(String[] args) {
-        int[] data = new int[]{-5,9, 1, 5, -3, 9, 20};
+        int[] data = new int[]{-9, 78, 0, 23, -567, 70, -1, 900, 4561};
         System.out.println(Arrays.toString(data));
         System.out.println(Arrays.toString(bubbleSort(data)));
-       Stream.of(data).sorted().forEach(a ->{
-           System.out.println(Arrays.toString(a));
-       });
+        System.out.println(Arrays.toString(quickSort(data, 0, data.length - 1)));
+        Stream.of(data).sorted().forEach(a -> {
+            System.out.println(Arrays.toString(a));
+        });
 
 
+    }
+
+
+    public static int[] quickSort(int[] data, int left, int right) {
+        int l = left;
+        int r = right;
+        int temp = 0;
+        int middle = data[(r + l) / 2];
+
+        while (l < r) {
+
+            while (data[l] < middle) {
+                l += 1;
+            }
+            while (data[r] > middle) {
+                r -= 1;
+            }
+            if (l >= r) {
+                break;
+            }
+            temp = data[l];
+            data[l] = data[r];
+            data[r] = temp;
+
+            if (data[l] == middle) {
+                r -= 1;
+            }
+            if (data[r] == middle) {
+                l += 1;
+            }
+        }
+        if (l == r) {
+            l += 1;
+            r -= 1;
+        }
+        if (r > left) {
+            quickSort(data, left, r);
+        }
+        if (l < right) {
+            quickSort(data, l, right);
+        }
+        return data;
     }
 
     public static int[] bubbleSort(int[] data) {
@@ -48,4 +91,6 @@ public class BubbleSort {
         }
         return data;
     }
+
+
 }

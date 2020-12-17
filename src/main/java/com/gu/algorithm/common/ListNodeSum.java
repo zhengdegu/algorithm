@@ -17,7 +17,62 @@ public class ListNodeSum {
 //
         ListNode listNode = reverseList(listNode1);
         System.out.println("=====================================");
+        System.out.println(jumpFloor(4));
 
+    }
+
+    /**
+     * 调整数组是奇数为前面   偶数位于后面
+     *
+     * @param array
+     * @return
+     */
+    public static int[] reOrderArray(int[] array) {
+        if (array == null || array.length == 0) {
+            throw new NullPointerException("数组为null");
+        }
+        int oddCount = 0, oddBegin = 0;
+        for (int k : array) {
+            if ((k & 1) == 1) {
+                oddCount++;
+            }
+        }
+        int[] newArray = new int[array.length];
+        for (int j : array) {
+            if ((j & 1) == 1) {
+                newArray[oddBegin++] = j;
+            } else {
+                newArray[oddCount++] = j;
+            }
+        }
+        return newArray;
+    }
+
+    /**
+     * 跳台阶问题   青蛙一次可以跳一个台阶  也可以挑两个台阶
+     *
+     * @param floor
+     * @return
+     */
+    public static int jumpFloor(int floor) {
+        if (floor <= 0) {
+            return 0;
+        }
+        if (floor == 1) {
+            return 1;
+        }
+        if (floor == 2) {
+            return 2;
+        }
+        //递归的思想
+        //return jumpFloor(floor-1)+jumpFloor(floor-2);
+        int first = 1, second = 2, third = 0;
+        for (int i = 3; i <= floor; i++) {
+            third = first + second;
+            first = second;
+            second = third;
+        }
+        return third;
     }
 
     /**
