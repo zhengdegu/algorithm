@@ -27,26 +27,7 @@ public class ListNodeSum {
      * @param array
      * @return
      */
-    public static int[] reOrderArray(int[] array) {
-        if (array == null || array.length == 0) {
-            throw new NullPointerException("数组为null");
-        }
-        int oddCount = 0, oddBegin = 0;
-        for (int k : array) {
-            if ((k & 1) == 1) {
-                oddCount++;
-            }
-        }
-        int[] newArray = new int[array.length];
-        for (int j : array) {
-            if ((j & 1) == 1) {
-                newArray[oddBegin++] = j;
-            } else {
-                newArray[oddCount++] = j;
-            }
-        }
-        return newArray;
-    }
+
 
     /**
      * 跳台阶问题   青蛙一次可以跳一个台阶  也可以挑两个台阶
@@ -74,6 +55,7 @@ public class ListNodeSum {
         }
         return third;
     }
+
 
     /**
      * 二维数组查找
@@ -165,6 +147,7 @@ public class ListNodeSum {
         }
         return tail;
     }
+
 
     /**
      * 链表翻转

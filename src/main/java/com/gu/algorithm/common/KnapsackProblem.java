@@ -18,7 +18,30 @@ package com.gu.algorithm.common;
 public class KnapsackProblem {
 
     public static void main(String[] args) {
+        //物品的重量
+        int[] w = {1, 4, 3};
+        //物品的价值 这里 val[i] 就是前面讲的 v[i]
+        int[] val = {1500, 3000, 2000};
+        //背包的容量
+        int m = 4;
+        //物品的个数
+        int n = val.length;
+        //v[i][j] 表示在前 i 个物品中能够装入容量为 j 的背包中的最大价值
+        int[][] v = new int[n + 1][m + 1];
+        //为了记录放入商品的情况，我们定一个二维数组
+        int[][] path = new int[n + 1][m + 1];
+        //初始化第一行和第一列, 这里在本程序中，可以不去处理，因为默认就是 0
+        for (int i = 0; i < v.length; i++) {
+            v[i][0] = 0;
+            v[0][i] = 0;
+        }
+        //不处理第一行 i 是从 1 开始的
+        for (int i = 1; i < v.length; i++) {
+            //不处理第一列, j 是从 1 开始的
+            for (int j = 1; j < v[0].length; j++) {
 
+            }
+        }
     }
 
 
