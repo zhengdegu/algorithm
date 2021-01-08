@@ -59,8 +59,6 @@ public class ReplaceSpace {
      */
     public static String replaceSpace(String[] data) {
         //对字符串进行null判断
-
-
         int length = data.length;
         StringBuilder stringBuilder = new StringBuilder();
         Arrays.sort(data);

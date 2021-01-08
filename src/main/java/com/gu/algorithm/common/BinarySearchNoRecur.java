@@ -15,6 +15,9 @@ public class BinarySearchNoRecur {
         int[] arr = {1, 3, 8, 10, 11, 67, 100};
         int index = binarySearch(arr, 9);
         System.out.println(index);
+
+
+
     }
 
     public static int binarySearch(int[] data, int target) {
