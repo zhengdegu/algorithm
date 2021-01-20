@@ -1,5 +1,6 @@
 package com.gu.algorithm.common;
 
+import java.util.Collections;
 import java.util.Stack;
 
 /**
