@@ -15,7 +15,7 @@ public class CountDownLatchDemo {
         ExecutorService executorService = Executors.newFixedThreadPool(SIZE);
         final CountDownLatch countDownLatch = new CountDownLatch(SIZE);
         for (int i = 0; i < SIZE; i++) {
-            executorService.submit(() -> {
+            executorSmit(() -> {
                 try {
                     System.out.println("处理⽂件的业务操作");
                 }catch (Exception e){
