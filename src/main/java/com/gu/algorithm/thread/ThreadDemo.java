@@ -7,7 +7,7 @@ package com.gu.algorithm.thread;
 public class ThreadDemo {
     public static void main(String[] args) {
 
-        new  ThreadTest().run();
+        new  ThreadTest().start();
 
         new  Thread(new Runnable()).start();
 
